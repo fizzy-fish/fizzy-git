@@ -10,3 +10,8 @@ function __git_tags
     | fzf --reverse --height=15
 end
 
+function __git_log_one_line_no_decorate
+  git log --oneline --no-decorate \
+    | fzf --reverse --height=15
+end
+
