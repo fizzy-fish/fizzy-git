@@ -28,6 +28,16 @@ if test ! -z $FIZZ_GCT_CMD
   end
 end
 
+if test -z "$FIZZ_GSH_CMD"
+  set -U FIZZ_GSH_CMD "gsh"
+end
+
+if test ! -z $FIZZ_GSH_CMD
+  function $FIZZ_GSH_CMD -d "Search and show git commit"
+    __fizz_git_show_commit $argv
+  end
+end
+
 if test -z "$FIZZ_GRB_CMD"
   set -U FIZZ_GRB_CMD "grb"
 end
