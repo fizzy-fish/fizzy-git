@@ -47,3 +47,13 @@ if test ! -z $FIZZ_GDB_CMD
     __fizz_git_delete_branch $argv
   end
 end
+
+if test -z "$FIZZ_GAS_CMD"
+  set -U FIZZ_GAS_CMD "gas"
+end
+
+if test ! -z $FIZZ_GAS_CMD
+  function $FIZZ_GAS_CMD -d "Search and apply git stash"
+    __fizz_git_apply_stash $argv
+  end
+end
